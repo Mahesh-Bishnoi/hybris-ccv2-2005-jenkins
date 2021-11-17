@@ -1,6 +1,6 @@
 def pipelineRepo = 'https://github.com/Mahesh-Bishnoi/hybris-ccv2-2005-jenkins.git'
 def projectRepo = 'https://bitbucket.org/lulugroup/lulu_ycommerce.git'
-def projectTag = '${PROJECT_TAG}'
+def projectTag = 'develop_ccv2_2005_uiux'
 def sonarUrl = 'https://sonarcloud.io'
 def projectRepoName = 'lulu_ycommerce'
 def packageToTest = 'com.lulu.*'
