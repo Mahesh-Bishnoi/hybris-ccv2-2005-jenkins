@@ -18,6 +18,16 @@ pipeline {
     }
 
     stages {
+        stage('Prepare') {
+            steps {
+                script {
+                    projectDir = "${env.WORKSPACE}"
+                }
+                cleanWs()
+                checkoutRepository("${projectDir}", "${params.PROJECT_TAG}", "${params.PROJECT_REPO}")
+                extractCommerce(projectDir)
+            }
+        }
 
         stage('Platform Setup') {
             steps {
