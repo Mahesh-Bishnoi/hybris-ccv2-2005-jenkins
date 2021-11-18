@@ -8,7 +8,7 @@ def call(branch, commerceDir, projectName, sonarUrl) {
 
     echo "##### Execute sonarcheck #####"
     withSonarQubeEnv('sonarQubeConfiguration') {
-      executeAntTasks(commerceDir, "sonarcheck", "dev", "-Xms256m -Xmx4096m -XX:+UseSerialGC -Dfile.encoding=UTF-8")
+      executeAntTasks(commerceDir, "sonarcheck", "dev", "-Xms256m -Xmx512m -XX:+UseSerialGC -Dfile.encoding=UTF-8")
     }
 
     echo "Sonar Quality Gate check in progress..."
