@@ -7,7 +7,7 @@ def call(commerceDir, branch, projectRepository) {
         echo "$repository"
         echo "$commerceDir"
         echo "$branch"
-        bat cd..
+        bat """cd.."""
         bat """ git clone ${repository} && git fetch --all && git checkout origin/${branch}"""
     }
 }
