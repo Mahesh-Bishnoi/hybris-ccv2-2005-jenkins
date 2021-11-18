@@ -23,16 +23,16 @@ pipeline {
                 script {
                     projectDir = "${env.WORKSPACE}"
                 }
-                cleanWs()
-                checkoutRepository("${projectDir}", "${params.PROJECT_TAG}", "${params.PROJECT_REPO}")
-                extractCommerce(projectDir)
+                //cleanWs()
+                //checkoutRepository("${projectDir}", "${params.PROJECT_TAG}", "${params.PROJECT_REPO}")
+                //extractCommerce(projectDir)
             }
         }
 
         stage('Platform Setup') {
             steps {
                 script {
-                    executeCommerceBuild(projectDir)
+                   // executeCommerceBuild(projectDir)
                 }
             }
         }
