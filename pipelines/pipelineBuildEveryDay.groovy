@@ -32,6 +32,7 @@ pipeline {
         stage('Platform Setup') {
             steps {
                 script {
+                    projectDir = "${env.WORKSPACE}"
                    // executeCommerceBuild(projectDir)
                 }
             }
