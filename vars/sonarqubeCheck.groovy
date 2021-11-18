@@ -15,6 +15,7 @@ def call(branch, commerceDir, projectName, sonarUrl) {
 
     script {
         SONAR_CHECK_URL = "$sonarUrl/api/qualitygates/project_status?projectKey=$projectName:$BRANCH_WITH_DASH"
+        echo "${sonarUrl}/api/qualitygates/project_status?projectKey=${projectName}:${BRANCH_WITH_DASH}"
         output = bat(returnStdout: true, script: "echo \$(curl $SONAR_CHECK_URL | jq '.projectStatus.status')")
         while (output.contains("NONE")) {
           bat('sleep 10s')
