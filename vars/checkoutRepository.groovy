@@ -5,7 +5,8 @@ def call(commerceDir, branch, projectRepository) {
         repository = "https://$USERNAME:$PASSWORD@" + repoDomainPart
         echo "##### Checkout repository #####"
         echo "$repository"
-        echo "cd ${commerceDir} && git clone ${repository} . && git fetch --all && git checkout origin/${branch}"
+        echo "$commerceDir"
+        echo "$branch"
         sh """cd ${commerceDir} && git clone ${repository} . && git fetch --all && git checkout origin/${branch}"""
     }
 }
